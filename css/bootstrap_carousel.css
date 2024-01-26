@@ -1,0 +1,116 @@
+/* Custom Bootstrap Carousel Styles */
+
+/* Carousel base class */
+.carousel {
+    position: relative;
+    height: 400px; /* Set a fixed height for the carousel */
+}
+
+/* Inner container of slides */
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    height: 100%; /* Ensure the inner container takes the full height of the carousel */
+    overflow: hidden;
+}
+
+/* Individual slides */
+.carousel-item {
+    position: relative;
+    display: none;
+    float: left;
+    width: 100%;
+    height: 100%; /* Ensure each slide takes the full height of the carousel */
+    margin-right: -100%;
+    backface-visibility: hidden;
+    transition: transform 0.6s ease-in-out;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensure the image covers the entire slide while maintaining aspect ratio */
+}
+
+/* Display the first slide by default */
+.carousel-item:first-of-type {
+    display: block;
+}
+
+/* Carousel slide animation */
+.carousel-item-next,
+.carousel-item-prev,
+.carousel-item.active {
+    display: block;
+}
+
+/* Carousel slide transition animation */
+.carousel-item-next,
+.carousel-item-prev {
+    transform: translateX(0);
+}
+
+/* Active slide during transition */
+.active.carousel-item-right,
+.carousel-item-next:not(.carousel-item-left) {
+    transform: translateX(100%);
+}
+
+.active.carousel-item-left,
+.carousel-item-prev:not(.carousel-item-right) {
+    transform: translateX(-100%);
+}
+
+/* Carousel indicators */
+.carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 15;
+    width: 100%;
+    padding-left: 0;
+    margin-left: -15px;
+    text-align: center;
+    list-style: none;
+}
+
+.carousel-indicators li {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    text-indent: -999px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.carousel-indicators .active {
+    background-color: #007bff;
+}
+
+/* Next and Previous button styling */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    color: rgb(172, 171, 171);
+    text-align: center;
+    border-radius: 50%;
+    line-height: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.carousel-control-prev {
+    left: 15px;
+}
+
+.carousel-control-next {
+    right: 15px;
+}
